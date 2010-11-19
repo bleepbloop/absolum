@@ -1,27 +1,27 @@
+#! /usr/bin/env python
+
 import os
 import sys
 
+
 def main():
     print sys.version
+    print sys.path
     dirtest()
-    
-    fib(100000)
+    #fib(100000)
 
 
-def dirtest():
+def dirtest(): 
     """ Do some Directory Testing """
 
     # test system directory calls
     print "Current Directory:"
+    print os.getcwd()
     print os.listdir(os.getcwd())
 
-    print "Parent Directory:"
-    print "Is '.ssh' in home?", '.ssh' in os.listdir(os.pardir)
+    print "Is '.ssh' in user's home?", '.ssh' in os.listdir('/home/rampage')
 
-    # print current directory
-    print os.getcwd()
-
-    print os.path.ismount('/home')
+    print "Is /home a mount point?", os.path.ismount('/home')
 
 def usage():
     # test print 

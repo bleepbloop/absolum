@@ -1,0 +1,7 @@
+= Absolum
+
+An Electronic Design Automation (EDA) Suite for Robotic Development.
+
+== Copyright
+
+See LICENSE for details.
