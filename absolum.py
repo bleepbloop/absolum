@@ -33,7 +33,8 @@ class Absolum:
         self.window.show()
 
     def gerbv(self):
-        gerber_viewer = gerbv.GerbView()
+        gerber_viewer = gerbv.GerberViewer()
+        gerber_viewer.create_project()
 
 
 def main(argv):
