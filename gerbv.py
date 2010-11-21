@@ -1,19 +1,36 @@
 from ctypes import *
 
-class GerbView:
-    def __init__(self):
-        """ import libgerbv """
-        libgerbv = CDLL("libgerbv.so.1.0.5")
-        print libgerbv
+libgerbv = None
+project = None
 
-        project = GerbvProject()
-        print project
-        
-        create_project = libgerbv.gerbv_create_project
-        create_project.restype = POINTER(GerbvProject)
-        project = create_project()[0]
-        print project
+class GerberViewer:
+    """GerberViewer Class Loads & Interacts with libgerbv"""
+
+    def __init__(self):
+        """Import libgerbv"""
+        global libgerbv
+        libgerbv = CDLL("libgerbv.so.1.0.5")
+
+    def create_project(self):
+        """Initialize GerbvProject Structure"""
+        global libgerbv
+        global project
+        gerbv_create_project = libgerbv.gerbv_create_project
+        gerbv_create_project.restype = POINTER(GerbvProject)
+        project = gerbv_create_project()[0]
+        print project        
+        print "Last Loaded = -1?", project.last_loaded
+        print "Check Before Delete = True?", project.check_before_delete
+        print "Max Files = 1?", project.max_files
+
+    def open_layer_from_filename(self):
+        pass
+
+    def create_rs274x_image_from_filename(self):
+        pass
        
+
+"""libgerbv Structures"""
 
 class GerbvProject(Structure): 
     """GdkColor, gerbv_fileinfo_t"""
