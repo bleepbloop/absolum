@@ -2,6 +2,7 @@
 
 import os
 import sys
+import platform
 
 
 def main():
@@ -22,6 +23,8 @@ def dirtest():
     print "Is '.ssh' in user's home?", '.ssh' in os.listdir('/home/rampage')
 
     print "Is /home a mount point?", os.path.ismount('/home')
+
+    print platform.machine()
 
 def usage():
     # test print 

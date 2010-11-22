@@ -1,14 +1,21 @@
 #! /usr/bin/env python
-""" Absolum """
+
+""" Absolum
+
+An Electronic Design Automation (EDA) Suite for Robotic Development.
+Currently based on PyGTK & libgerbv.
+
+
+"""
 
 import sys
-
+import gerbv
+"""Import GTK"""
 import pygtk
 pygtk.require('2.0')
 import gtk
 
-import gerbv
-
+# =============================================================================
 
 class Absolum:
 
@@ -35,14 +42,11 @@ class Absolum:
     def gerbv(self):
         gerber_viewer = gerbv.GerberViewer()
         gerber_viewer.create_project()
+        gerber_viewer.open_layer_from_filename()
 
+# =============================================================================
 
-def main(argv):
-        absolum = Absolum()
-        absolum.gerbv()
-        gtk.main()
-
-
-# start the ball rolling.
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    absolum = Absolum()
+    absolum.gerbv()
+    gtk.main()
