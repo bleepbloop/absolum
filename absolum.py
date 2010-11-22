@@ -38,15 +38,12 @@ class Absolum:
         self.button.show()
         self.box.show()
         self.window.show()
-
-    def gerbv(self):
-        gerber_viewer = gerbv.GerberViewer()
-        gerber_viewer.create_project()
-        gerber_viewer.open_layer_from_filename()
-
+        
 # =============================================================================
 
 if __name__ == "__main__":
     absolum = Absolum()
-    absolum.gerbv()
+    gerber_viewer = gerbv.GerberViewer()
+    gerber_viewer.create_project()
+    gerber_viewer.open_layer_from_file()
     gtk.main()
