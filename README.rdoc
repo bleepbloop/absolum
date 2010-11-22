@@ -2,6 +2,9 @@
 
 An Electronic Design Automation (EDA) Suite for Robotic Development.
 
+== Dependency
+* gEDA's gerbv for Gerber file support
+
 == Copyright
 
 See LICENSE for details.
