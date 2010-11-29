@@ -38,6 +38,6 @@ class Gui:
     def start(self):
         gtk.main()
 
-    def.stop(self):
+    def stop(self):
         gtk.main_quit()
 
