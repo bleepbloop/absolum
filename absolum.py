@@ -7,28 +7,28 @@ Currently based on PyGTK & libgerbv.
 
 """
 
+""" System Modules """
 import sys
+import argparse
+
+""" Absolum Modules """
 import gerbv
+import gui
 
 
 # =============================================================================
 
 class Absolum:
 
-    def __init__(self, args):
-        if args[0] == "-h":
-            usage()
-
-    def usage(self):
-        print """
-        Usage: thingy [options]
-	        -h
-	        -H hostname
-        """
+    def __init__(self):
+        pass
 
         
 # =============================================================================
 
 if __name__ == "__main__":
-    absolum = Absolum(sys.argv[:1])
+    parser = argparse.ArgumentParser(
+             description='Absolum: The Robotics Design Suite')
+    args = parser.parse_args()
+    absolum = Absolum()
 
