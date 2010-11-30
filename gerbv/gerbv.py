@@ -23,7 +23,7 @@ class GdkColor(Structure):
                 ("pixel", c_uint64)]
 
 # =============================================================================
-class GerberViewer:
+class GerberViewer():
     """GerberViewer Class Loads & Interacts with libgerbv"""
 
     def __init__(self):
