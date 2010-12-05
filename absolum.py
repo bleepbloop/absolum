@@ -14,7 +14,7 @@ import argparse
 """ Absolum Modules """
 import gerbv
 import gui
-from gerbv import gerbv
+from gerbv import viewer
 
 # =============================================================================
 
@@ -24,8 +24,8 @@ class Absolum:
         pass
 
     def load_gerber(self):
-    	gerber = gerbv.GerberViewer()
-	print gerber
+    	gerber_viewer = viewer.GerberViewer()
+	print gerber_viewer
 
     def load_gui(self):
         pass 
