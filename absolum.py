@@ -8,13 +8,13 @@ Currently based on PyGTK & libgerbv.
 """
 
 """ System Modules """
-import sys
 import argparse
+import sqlite3
+import sys
 
 """ Absolum Modules """
-import gerbv
-import gui
 from gerbv import viewer
+from gui import window
 
 # =============================================================================
 
@@ -25,10 +25,14 @@ class Absolum:
 
     def load_gerber(self):
     	gerber_viewer = viewer.GerberViewer()
-	print gerber_viewer
+	print dir(gerber_viewer)
 
     def load_gui(self):
-        pass 
+        pass
+
+    def connect_atomic(self):
+    	pass
+
 
         
 # =============================================================================
