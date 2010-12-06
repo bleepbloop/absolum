@@ -42,7 +42,7 @@ class HelloWorld2:
         self.window.add(self.box1)
 
         # Creates a new button with the label "Button 1".
-        self.button1 = gtk.Button("Button 1")
+        self.button1 = gtk.Button("Start")
 
         # Now when the button is clicked, we call the "callback" method
         # with a pointer to "button 1" as its argument
@@ -57,7 +57,7 @@ class HelloWorld2:
         self.button1.show()
 
         # Do these same steps again to create a second button
-        self.button2 = gtk.Button("Button 2")
+        self.button2 = gtk.Button("Stop")
 
         # Call the same callback method with a different argument,
         # passing a pointer to "button 2" instead.
