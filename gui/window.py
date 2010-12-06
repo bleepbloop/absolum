@@ -14,7 +14,7 @@ import gtk
 
 # =============================================================================
 
-class Gui:
+class Main():
 
     def __init__(self):
         # Create a new window
