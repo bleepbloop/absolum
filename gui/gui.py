@@ -20,7 +20,7 @@ class Gui:
         # Create a new window
         self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
         self.window.set_title("Absolum")
-        self.window.set_border_width(0)
+        self.window.set_border_width(10)
 
         # Create a new box
         self.box = gtk.HBox(False, 0)
