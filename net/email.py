@@ -6,7 +6,6 @@ Send emails based on example from the website:
 ginstrom.com/scribbles/2009/03/15/a-module-to-send-email-simply-in-python
 
 """
-
 import mailer
 
 class Sender(object):
@@ -21,8 +20,8 @@ class Sender(object):
         message.Subject = "My Test Python Email"    
         message.Body = "Hello Jose" # open("letter.txt", "rb").read()
 
-        mailer = mailer.Mailer('imap.google.com')
-        mailer.send(message)
+        my_mailer = mailer.Mailer("outgoing.verizon.net")
+        my_mailer.send(message)
         
         
 if __name__ == "__main__":
