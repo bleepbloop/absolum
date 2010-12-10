@@ -1,0 +1,5 @@
+""" Absolum: db/part.py
+
+    
+
+""""
