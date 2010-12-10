@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-""" Python Gerber Viewer (gerbv)
+""" Python Gerber Viewer (gerbv) Extension
 
 Gerber Viewer interacts with gEDA's libgerbv to interact with 
 Gerber RS-274X, Excellon drill, and CSV pick-and-place files.
