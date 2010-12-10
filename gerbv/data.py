@@ -1,6 +1,8 @@
-""" gerbv:data.py
+""" Absolum: gerbv/data.py
 
-Gerber Viewer Structures
+    GerberViewer (libgerbv) Structures
+
+
 
 """
 
