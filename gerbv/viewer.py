@@ -22,14 +22,14 @@ from data import *
 
 
 # ============================================================================
-class GerberViewer():
+class GerberViewer(object):
     """GerberViewer Class Loads & Interacts with libgerbv"""
 
     def __init__(self):
         """Import libgerbv"""
         self._libgerbv = CDLL(find_library("gerbv"))
         self._filename = c_char_p(os.getcwd() \
-                            + '/test/ex/ArduinoMp3Shield.drd')
+                            + '/test/gerbers/ArduinoMp3Shield.drd')
         self._project = None
 
     def create_project(self):
