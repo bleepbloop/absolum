@@ -26,25 +26,20 @@ class GerberViewer(object):
     """GerberViewer Class Loads & Interacts with libgerbv"""
 
     def __init__(self):
-        """Import libgerbv"""
         self._libgerbv = CDLL(find_library("gerbv"))
-        self._filename = c_char_p(os.getcwd() \
-                            + '/test/gerbers/ArduinoMp3Shield.drd')
         self._project = None
 
     def create_project(self):
-        """Initialize GerbvProject Structure"""
         gerbv_create_project = self._libgerbv.gerbv_create_project
         gerbv_create_project.restype = POINTER(GerbvProject)
         self._project = gerbv_create_project()[0]
         self.print_project()
 
-    def open_layer_from_file(self):
-        """ Open a file, parse contents, 
-            and add a new layer to an existing project."""
+    def open_layer_from_filename(self, filename):
+        filename = os.getcwd() + '/test/files/gerbers/ArduinoMp3Shield.drd'
         gerbv_open_layer = self._libgerbv.gerbv_open_layer_from_filename
         gerbv_open_layer.argtypes = [POINTER(GerbvProject), c_char_p]
-        gerbv_open_layer(byref(self._project), self._filename)
+        gerbv_open_layer(byref(self._project), filename)
         self.print_project()
 
     def create_rs274x_image_from_file(self):

@@ -16,7 +16,7 @@ import argparse
 
 """ Absolum Modules """
 from gerbv.viewer import GerberViewer
-from gui import window
+from gui.window import Main
 
 # ============================================================================
 
@@ -27,15 +27,17 @@ class Absolum():
 
     # Gui 
     def load_gui(self):
-        self._gui = window.Main()
+        self._gui = Main()
         
     def start_gui(self):
         self._gui.start()
 
     # Gerber Viewer
     def load_gerber(self):
-        self._gerber_viewer = GerberViewer()
-        print dir(self._gerber_viewer)
+        self._gerber_viewer = GerberViewer(os.getcwd() \
+                                                    + '/test/files/gerbers/ArduinoMp3Shield.drd')
+        self._gerber_viewer.create_project()
+        self._gerber_viewer.open_layer_from_file()        
 
     # Databases
     def load_db(self):

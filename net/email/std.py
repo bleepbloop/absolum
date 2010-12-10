@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-""" Absolum: Email
+""" Absolum: net/email/std.py (Standard Email Mailer)
 
 Send emails based on example from the website:
 ginstrom.com/scribbles/2009/03/15/a-module-to-send-email-simply-in-python

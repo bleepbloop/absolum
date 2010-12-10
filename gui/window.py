@@ -13,7 +13,7 @@ import gtk
 
 # =============================================================================
 
-class Main():
+class Main(object):
 
     def __init__(self):
         # Create a new window
@@ -45,6 +45,3 @@ class Main():
 
     def start(self):
         gtk.main()
-
-    def stop(self):
-        gtk.main_quit()
