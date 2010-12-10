@@ -15,7 +15,7 @@ import sys
 import argparse
 
 """ Absolum Modules """
-from gerbv import viewer
+from gerbv.viewer import GerberViewer
 from gui import window
 
 # ============================================================================
@@ -34,7 +34,7 @@ class Absolum():
 
     # Gerber Viewer
     def load_gerber(self):
-        self._gerber_viewer = viewer.GerberViewer()
+        self._gerber_viewer = GerberViewer()
         print dir(self._gerber_viewer)
 
     # Databases
@@ -48,9 +48,9 @@ class Absolum():
 # ============================================================================
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-                description='Absolum: The Robotic Design Suite')
-    args = parser.parse_args()
+    # parser = argparse.ArgumentParser(
+    #             description='Absolum: The Robotic Design Suite')
+    # args = parser.parse_args()
 
     # Create Absolum
     absolum = Absolum()
@@ -64,4 +64,4 @@ if __name__ == "__main__":
     absolum.load_db()
 
     # Start Last... Gui
-    absolum.start_gui()
+    # absolum.start_gui()
