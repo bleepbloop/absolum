@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-""" Absolum:Email
+""" Absolum: Email
 
 Send emails based on example from the website:
 ginstrom.com/scribbles/2009/03/15/a-module-to-send-email-simply-in-python

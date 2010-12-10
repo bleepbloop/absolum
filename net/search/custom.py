@@ -13,7 +13,6 @@ class CustomSearch(object):
 
     def get_results(self):
         search_results = urllib2.urlopen(self.url)
-        print search_results
         json = simplejson.loads(search_results.read())
         results = json['responseData']['results']
         for i in results:
