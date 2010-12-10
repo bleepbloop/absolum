@@ -17,40 +17,41 @@ import gui
 from gerbv import viewer
 from gui import window
 
-# =============================================================================
+# ============================================================================
 
 class Absolum:
 
-	def __init__(self):
-		pass
+    def __init__(self):
+        pass
 
-	def load_gerber(self):
-		gerber_viewer = viewer.GerberViewer()
-		print gerber_viewer
+    def load_gerber(self):
+        gerber_viewer = viewer.GerberViewer()
+        print gerber_viewer
 
-	def load_gui(self):
-		gui = window.Main()
-		print gui 
-		
-	def load_db(self):
-		pass
+    def load_gui(self):
+        gui = window.Main()
+        print gui 
 
-        
-# =============================================================================
+    def load_db(self):
+        pass
+
+
+# ============================================================================
 
 if __name__ == "__main__":
-	parser = argparse.ArgumentParser(
-				description='Absolum: The Robotic Design Suite')
-	args = parser.parse_args()
+    parser = argparse.ArgumentParser(
+                description='Absolum: The Robotic Design Suite')
+    args = parser.parse_args()
 
-	absolum = Absolum()
+    """ Create Absolum """
+    absolum = Absolum()
 
-	""" Starting Gerber Viewer: """
-	absolum.load_gerber()
+    """ Starting... Gerber Viewer: """
+    absolum.load_gerber()
     
-	""" Starting GTK Window """
-	absolum.load_gui()
-	
-	""" Initializing Databases """
-	absolum.load_db()
-	
+    """ Starting... GTK Window """
+    absolum.load_gui()
+
+    """ Initializing Databases """
+    absolum.load_db()
+
