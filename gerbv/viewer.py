@@ -51,10 +51,10 @@ class GerberViewer():
         pass
 
     def print_project(self):
-        return [('project_instance', self._project),        
-       	        ('last_loaded', self._project.last_loaded),
-        		('check_before_delete', self._project.check_before_delete),
-        		('max_files', self._project.max_files)]
+        return [('project_instance', self._project),
+                ('last_loaded', self._project.last_loaded),
+                ('check_before_delete', self._project.check_before_delete),
+                ('max_files', self._project.max_files)]
 
 if __name__ == "__main__":
     gerber_viewer = GerberViewer()
