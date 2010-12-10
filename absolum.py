@@ -5,53 +5,76 @@
 An Electronic Design Automation (EDA) Suite for Robotic Development.
 Currently based on PyGTK & libgerbv.
 
+"What do I do with Absolum?"
+
 """
+
 
 """ System Modules """
 import sys
 import argparse
 
 """ Absolum Modules """
-import gerbv
-import gui
 from gerbv import viewer
 from gui import window
 
 # ============================================================================
 
-class Absolum:
+class Absolum():
 
     def __init__(self):
-        pass
+        print "Welcome to Absolum"
 
-    def load_gerber(self):
-        gerber_viewer = viewer.GerberViewer()
-        print gerber_viewer
-
+    # Gui 
     def load_gui(self):
-        gui = window.Main()
-        print gui 
+        self._gui = window.Main()
+        
+    def start_gui(self):
+        self._gui.start()
 
+    # Gerber
+    def load_gerber(self):
+        self._gerber_viewer = viewer.GerberViewer()
+        print dir(self._gerber_viewer)
+
+    # Database
     def load_db(self):
         pass
 
+    # Network
+    def connect_atomic(self):
+        pass
+        
+#=============================================================================
+>>>>>>> 3390560b27788497f3945e356fc06f3f73b7df38:absolum.py
 
-# ============================================================================
-
+<<<<<<< HEAD:absolum.py
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
                 description='Absolum: The Robotic Design Suite')
     args = parser.parse_args()
 
-    """ Create Absolum """
+    # Create Absolum
     absolum = Absolum()
 
-    """ Starting... Gerber Viewer: """
+    # Start...  Gerber Viewer
     absolum.load_gerber()
-    
-    """ Starting... GTK Window """
+    #           GTK Window
     absolum.load_gui()
 
-    """ Initializing Databases """
+    # Init...   Databases
     absolum.load_db()
+=======
+    """ Start gui Last """
+    absolum.start_gui()
+>>>>>>> 3390560b27788497f3945e356fc06f3f73b7df38:absolum.py
 
+<<<<<<< HEAD:absolum.py
+=======
+if __name__ == "__main__":
+    # parser = argparse.ArgumentParser(description='Absolum: The Robotics Design Suite')
+    # args = parser.parse_args()
+    main()
+    
+    
+>>>>>>> 3390560b27788497f3945e356fc06f3f73b7df38:absolum.py

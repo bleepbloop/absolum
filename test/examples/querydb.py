@@ -1,7 +1,8 @@
-import mysql
+import _mysql
+import sys
 
 def main():
-    db = _mysql.connect()
+    db = _mysql.connect(sys.argv[0])
 
 
 
