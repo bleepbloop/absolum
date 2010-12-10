@@ -20,14 +20,8 @@ from ctypes.util import find_library
 """ libgerbv Helper Modules """
 from data import *
 
-# =============================================================================
-class GdkColor(Structure):
-    _fields_ = [("red", c_uint64), 
-                ("green", c_uint64),
-                ("blue", c_uint64),
-                ("pixel", c_uint64)]
 
-# =============================================================================
+# ============================================================================
 class GerberViewer():
     """GerberViewer Class Loads & Interacts with libgerbv"""
 
