@@ -1,7 +1,7 @@
 
-""" gui/window.py :Absolum
+""" Absolum: gui/window.py
 
-Currently based on PyGTK & libgerbv.
+    Currently based on PyGTK & libgerbv.
 
 """
 
