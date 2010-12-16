@@ -2,28 +2,34 @@
 
 """ Absolum
 
-An Electronic Design Automation (EDA) Suite for Robotic Development.
-Currently based on PyGTK & libgerbv.
+    Absolum is an Electronic Design Automation (EDA) Suite for Robotics 
+    and Gadget Development.
+    Currently based on PyGTK, libgerbv, and a few other python modules.
 
-"What do I do with Absolum?"
-
+    What can I do with Absolum?
+    * Search for the right parts for your project from the top part distributors
+    * Create real-time BOMs with the latest prices
+    
 """
 
+__author__ = 'Jose.Torres@8bc.org (Jose Angel Torres)'
 
 """ System Modules """
+import os
 import sys
 import argparse
 
 """ Absolum Modules """
 from gerbv.viewer import GerberViewer
 from gui.window import Main
+from project.aslan import Aslan
 
 # ============================================================================
 
 class Absolum():
 
     def __init__(self):
-        print "Welcome to Absolum!"
+        self.welcome()
 
     # Gui 
     def load_gui(self):
@@ -34,18 +40,25 @@ class Absolum():
 
     # Gerber Viewer
     def load_gerber(self):
-        self._gerber_viewer = GerberViewer(os.getcwd() \
-                                                    + '/test/files/gerbers/ArduinoMp3Shield.drd')
+        self._gerber_viewer = GerberViewer()
         self._gerber_viewer.create_project()
-        self._gerber_viewer.open_layer_from_file()        
+        self._gerber_viewer.open_layer_from_filename()        
 
     # Databases
     def load_db(self):
         pass
 
     # Network Connection
-    def connect_atomic(self):
+    def atomic_connect(self):
         pass
+        
+    # Projects
+    def create_aslan(self):
+        pass
+        
+    def welcome(self):
+        print "Welcome to Absolum!\n \
+        * Always remember *Absolutely* Nothing is Impossible!"
         
 # ============================================================================
 
@@ -57,13 +70,17 @@ if __name__ == "__main__":
     # Create Absolum
     absolum = Absolum()
 
-    # Start...      Gerber Viewer
+    # Start........ Gerber Viewer
     absolum.load_gerber()
-    #               GTK Window
+    #.............. GTK Window
     absolum.load_gui()
 
-    # Init...       Databases
+    # Init......... Databases
     absolum.load_db()
-
+    
+    # Create....... Project
+    absolum.create_aslan()
+    
     # Start Last... Gui
     # absolum.start_gui()
+
