@@ -1,0 +1,14 @@
+© 2010, Jose Angel Torres
+
+This work is licensed under a 
+`Creative Commons Attribution-ShareAlike 3.0 Unported License`__.
+__ http://creativecommons.org/licenses/by-sa/3.0/
+
+Please contact the author(s) for more information about this software's license.
+
+Email:	    Jose@RampageRobotics.com
+Company:    `Rampage Robotics Corp.`__
+Tele.:	    1 (832) - 38 - ROBOT (At this time, please send texts only.)
+
+__ http://rampagerobotics.com
+
