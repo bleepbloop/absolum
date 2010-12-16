@@ -8,8 +8,8 @@ This work is licensed under a
 Please contact the author(s) for more information about this software's license.
 
 Email:	    Jose@RampageRobotics.com
-Company:    `Rampage Robotics Corp.`_
+Company:    `Rampage Robotics Corporation`_
 Tele.:	    1 (832) - 38 - ROBOT (At this time, please send texts only.)
 
-.. _Rampage Robotics Corp.: http://rampagerobotics.com
+.. _Rampage Robotics Corporation: http://rampagerobotics.com
 
