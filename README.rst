@@ -24,5 +24,6 @@ Author(s)
 
 Copyright
 ---------
-See LICENSE file for details.
+See LICENSE_ file for details.
 
+:: _License: https://github.com/bleepbloop/absolum/blob/master/LICENSE
