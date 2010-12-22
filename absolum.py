@@ -15,14 +15,16 @@
 __author__ = 'Jose.Torres@8bc.org (Jose Angel Torres)'
 
 """ System Modules """
+import argparse
 import os
 import sys
-import argparse
+import vte
 
 """ Absolum Modules """
 from gerbv.viewer import GerberViewer
 from gui.window import Main
 from project.aslan import Aslan
+from net.atomic_connect import AtomicHandler
 
 # ============================================================================
 
@@ -30,51 +32,67 @@ class Absolum():
 
     def __init__(self):
         self.welcome()
-
-    # Gui 
-    def load_gui(self):
-        self._gui = Main()
-        
-    def start_gui(self):
-        self._gui.start()
-
-    # Gerber Viewer
-    def load_gerber(self):
-        self._gerber_viewer = GerberViewer()
-        self._gerber_viewer.create_project()
-        self._gerber_viewer.open_layer_from_filename()        
-
-    # Databases
-    def load_db(self):
-        pass
-
-    # Network Connection
-    def atomic_connect(self):
-        pass
-        
-    # Projects
-    def create_aslan(self):
-        pass
         
     def welcome(self):
         print "Welcome to Absolum!\n \
         * Always remember *Absolutely* Nothing is Impossible!"
         
+# =====================================
+# User Interface 
+    def load_gui(self):
+        self._gui = Main()
+        
+    def start_gui(self):
+        self._gui.start()
+        
+# =====================================
+# Gerber Viewer
+    def load_gerber(self):
+        self._gerber_viewer = GerberViewer()
+        self._gerber_viewer.create_project()
+        self._gerber_viewer.open_layer_from_filename() 
+        
+# =====================================       
+# Databases
+    def load_db(self):
+        pass
+        
+# =====================================
+# Projects
+    def create_aslan(self):
+        self.aslan = Aslan()
+
+# =====================================
+# Networking
+    def create_handler(self):
+        self._atomic_handler = AtomicHandler()
+        
+# =====================================
+# Terminal
+#    def start_terminal(self):
+#        self.term = vte.Terminal()
+#        self.term.fork_command("ps axf")
+#        gtk.main()
+                
 # ============================================================================
 
 if __name__ == "__main__":
-    # parser = argparse.ArgumentParser(
-    #             description='Absolum: The Robotic Design Suite')
-    # args = parser.parse_args()
+    parser = argparse.ArgumentParser(
+                description='Absolum: The Robotic Design Suite')
+    args = parser.parse_args()
 
     # Create Absolum
     absolum = Absolum()
 
     # Start........ Gerber Viewer
     absolum.load_gerber()
-    #.............. GTK Window
-    absolum.load_gui()
-
+    # ............. GTK Window
+    # absolum.load_gui()
+    # ............. Networking
+    absolum.create_handler()
+    # ............. Terminal
+    # absolum.start_terminal()
+    
     # Init......... Databases
     absolum.load_db()
     
@@ -83,4 +101,5 @@ if __name__ == "__main__":
     
     # Start Last... Gui
     # absolum.start_gui()
-
+    
+# ============================================================================
