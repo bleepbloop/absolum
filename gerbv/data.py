@@ -2,10 +2,11 @@
 
     GerberViewer (libgerbv) Structures
 
-
-
 """
 
+__author__ = 'Jose.Torres@8bc.org (Jose Angel Torres)'
+
+""" System Modules """
 from ctypes import *
 
 # ============================================================================
@@ -16,6 +17,18 @@ class GdkColor(Structure):
                 ("pixel", c_uint64)]
 
 # ============================================================================
+# enums
+
+class GerbvAperatureState(Structure):
+    """ gerbv_aperature_state_t """
+    pass
+    
+class GerbvInterpolation(Structure):
+    """ gerbv_interpolation_t """
+    pass
+
+# ============================================================================
+# structures
 
 class GerbvLayer(Structure):
     """ gerbv_layer_t """
@@ -35,7 +48,7 @@ class GerbvNetstate(Structure):
                 ("offsetB", c_double),              # xx gdouble
                 ("scaleA", c_double),               # xx gdouble
                 ("scaleB", c_double),               # xx gdouble
-                ("next", c_void_p)]                 # xx gpointer
+                ("next", c_void_p)]                 # xx gpointer              
 
 class GerbvNet(Structure):
     """ gerbv_net_t """
@@ -49,7 +62,7 @@ GerbvNet._fields_ = [("start_x", c_double),         # xx double
                 ("interpolation", c_int),           # gerbv_interpolation_t 
                 ("gerbv_cirseg_t", c_int),          # gerbv_cirseg_t *
                 ("next", POINTER(GerbvNet)),        # xx gerbv_net *
-                ("label", c_void_p),                # GString *
+                ("label", c_void_p),                # xx GString *
                 ("layer", POINTER(GerbvLayer)),     # xx gerbv_layer_t *
                 ("state", POINTER(GerbvNetstate))]  # xx gerbv_netstate_t *
 
