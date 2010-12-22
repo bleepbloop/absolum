@@ -17,31 +17,47 @@ class Main(object):
 
     def __init__(self):
         # Create a new window
-        self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
-        self.window.set_title("Absolum")
-        self.window.set_border_width(10)
-
+        self._window = gtk.Window(gtk.WINDOW_TOPLEVEL)
+        self._window.set_title("Absolum")
+        self._window.set_border_width(2)
+        
+        self.setup_handlers()
+        
+        self.create_toolbox()
+        self.create_buttons()
+        
+        self.show_components()
+       
+    def setup_handlers(self):
+        self._window.connect("destroy", self.destroy)
+        
+    def create_toolbox(self):
         # Create a new horizontal toolbox
-        self.box = gtk.HBox(False, 0)
-        self.window.add(self.box)
-
-        # Second horizontal toolbox
-        self.toolbox = gtk.HBox(False, 0)
-        # self.window.add(self.toolbox)
-
+        self._toolbox = gtk.HBox(False, 0)
+        self._window.add(self._toolbox)
+        
+    def create_buttons(self):
         # Create a new parts button
-        self.parts_button = gtk.Button("Parts")
-        self.box.pack_start(self.parts_button, True, True, 0)
+        self._parts_button = gtk.Button("Parts")
+        self._toolbox.pack_start(self._parts_button, True, True, 0)
 
         # Create a new search button
-        self.search_button = gtk.Button("Search")
-        self.box.pack_start(self.search_button, True, True, 0)
+        self._search_button = gtk.Button("Search")
+        self._toolbox.pack_start(self._search_button, True, True, 0)
 
+    def show_components(self):
         # Show Components
-        self.parts_button.show()
-        # self.search_button.show()
-        self.box.show()
-        self.window.show()
+        self._parts_button.show()
+        self._search_button.show()
+        
+        self._toolbox.show()
+        
+        self._window.show()
 
     def start(self):
         gtk.main()
+        
+    def destroy(self, widget, data=None):
+        gtk.main_quit()
+        
+# ============================================================================= 
