@@ -13,8 +13,13 @@ import os
 import datetime
 
 """ Aslan Modules """
+import helper.file
+
+# project module
 from bom.list import Catalog
-import schem
+from docs.pdf import DocumentViewer
+from schem.capture import Diagram
+
 import pcb
 import cnc
 
@@ -23,11 +28,19 @@ import cnc
 class Aslan(object):
 
     def __init__(self):
-        bom_list = Catalog()
+        self.bom_list = Catalog()
+        self.pdf_docs = DocumentViewer()
+        self.schem = Diagram()
+        
+    def new_project(self):
+        new_schematic()
+        new_pcb()
+        
+    def new_schematic(self):
+        pass
     
-    def modification_date(filename):
-        t = os.path.getmtime(filename)
-        return datetime.datetime.fromtimestamp(t)
-
+    def new_pcb(self):
+        pass
+        
 
 
