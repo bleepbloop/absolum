@@ -8,16 +8,16 @@ Gerber RS-274X, Excellon drill, and CSV pick-and-place files.
 
 """
 
-__version__ = '0.0.1'
-
+__author__ = 'Jose.Torres@8bc.org (Jose Angel Torres)'
 
 """ System Modules """
 import os
 import sys
+# ctypes for libgerbv interaction
 from ctypes import *
 from ctypes.util import find_library
 
-""" libgerbv Helper Modules """
+""" Helper (Gerber Viewer) Data Storage Module """
 from data import *
 
 
@@ -35,8 +35,8 @@ class GerberViewer(object):
         self._project = gerbv_create_project()[0]
         self.print_project()
 
-    def open_layer_from_filename(self, filename):
-        filename = os.getcwd() + '/test/files/gerbers/ArduinoMp3Shield.drd'
+    def open_layer_from_filename(self, \
+        filename= os.getcwd() + '/test/files/gerbers/ArduinoMp3Shield.drd'):
         gerbv_open_layer = self._libgerbv.gerbv_open_layer_from_filename
         gerbv_open_layer.argtypes = [POINTER(GerbvProject), c_char_p]
         gerbv_open_layer(byref(self._project), filename)
@@ -50,6 +50,8 @@ class GerberViewer(object):
                 ('last_loaded', self._project.last_loaded),
                 ('check_before_delete', self._project.check_before_delete),
                 ('max_files', self._project.max_files)]
+                
+# ============================================================================
 
 if __name__ == "__main__":
     gerber_viewer = GerberViewer()
