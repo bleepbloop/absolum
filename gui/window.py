@@ -14,7 +14,6 @@ import gtk
 # =============================================================================
 
 class Main(object):
-
     def __init__(self):
         # Create a new window
         self._window = gtk.Window(gtk.WINDOW_TOPLEVEL)
@@ -27,15 +26,20 @@ class Main(object):
         self.create_buttons()
         
         self.show_components()
+        
+# =====================================
        
     def setup_handlers(self):
         self._window.connect("destroy", self.destroy)
+        
+# =====================================
         
     def create_toolbox(self):
         # Create a new horizontal toolbox
         self._toolbox = gtk.HBox(False, 0)
         self._window.add(self._toolbox)
         
+# =====================================        
     def create_buttons(self):
         # Create a new parts button
         self._parts_button = gtk.Button("Parts")
@@ -45,6 +49,7 @@ class Main(object):
         self._search_button = gtk.Button("Search")
         self._toolbox.pack_start(self._search_button, True, True, 0)
 
+# =====================================
     def show_components(self):
         # Show Components
         self._parts_button.show()
@@ -54,6 +59,7 @@ class Main(object):
         
         self._window.show()
 
+# =====================================
     def start(self):
         gtk.main()
         
