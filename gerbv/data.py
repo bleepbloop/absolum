@@ -1,6 +1,6 @@
 """ Absolum: gerbv/data.py
 
-    GerberViewer (libgerbv) Structures
+    GerberViewer (libgerbv) Ctype Enumerations & Structures
 
 """
 
@@ -17,30 +17,35 @@ class GdkColor(Structure):
                 ("pixel", c_uint64)]
 
 # ============================================================================
-# enums
+# Enumerations
 
+# =====================================
+# gerbv_aperature_state_t
 class GerbvAperatureState(Structure):
-    """ gerbv_aperature_state_t """
+    """  """
     pass
     
+# =====================================
+# gerbv_interpolation_t
 class GerbvInterpolation(Structure):
-    """ gerbv_interpolation_t """
     pass
 
 # ============================================================================
-# structures
+# Structures
 
+# =====================================
+# gerbv_layer_t
 class GerbvLayer(Structure):
-    """ gerbv_layer_t """
     _fields_ = [("stepAndRepeat", c_int),           # gerbv_step_and_repeat_t
                 ("knockout", c_int),                # gerbv_knockout_t
                 ("rotation", c_double),             # xx gdouble
                 ("polarity", c_int),                # gerbv_polarity_t
                 ("name", c_char_p),                 # xx gchar *
                 ("next", c_void_p)]                 # xx gpointer
-
+                
+# =====================================
+# gerbv_netstate_t
 class GerbvNetstate(Structure):
-    """ gerbv_netstate_t """
     _fields_ = [("axisSelect", c_int),              # gerbv_axis_select_t
                 ("mirrorState", c_int),             # gerbv_mirror_state_t
                 ("unit", c_int),                    # gerbv_unit_t
@@ -48,10 +53,11 @@ class GerbvNetstate(Structure):
                 ("offsetB", c_double),              # xx gdouble
                 ("scaleA", c_double),               # xx gdouble
                 ("scaleB", c_double),               # xx gdouble
-                ("next", c_void_p)]                 # xx gpointer              
-
+                ("next", c_void_p)]                 # xx gpointer
+                
+# =====================================             
+# gerbv_net_t
 class GerbvNet(Structure):
-    """ gerbv_net_t """
     pass
 GerbvNet._fields_ = [("start_x", c_double),         # xx double
                 ("start_y", c_double),              # xx double
@@ -65,9 +71,10 @@ GerbvNet._fields_ = [("start_x", c_double),         # xx double
                 ("label", c_void_p),                # xx GString *
                 ("layer", POINTER(GerbvLayer)),     # xx gerbv_layer_t *
                 ("state", POINTER(GerbvNetstate))]  # xx gerbv_netstate_t *
-
+                
+# =====================================
+# gerbv_image_t
 class GerbvImage(Structure):
-    """ gerbv_image_t """
     _fields_ = [("layertype", c_int),               # gerbv_layertype_t
                 ("aperture", c_int),                # gerbv_aperature_t *
                 ("layers", GerbvLayer),             # xx gerbv_layer_t *
@@ -78,17 +85,19 @@ class GerbvImage(Structure):
                 ("netlist", c_int),                 # gerbv_net_t *
                 ("gerbv_stats", c_int),             # gerbv_stats_t *
                 ("drill_stats", c_int)]             # gerbv_drill_status_t *
-
+                
+# =====================================
+# gerbv_user_transformation_t
 class GerbvUserTransformation(Structure):
-    """ gerbv_user_transformation_t """
     _fields_ = [("translateX", c_double),           # xx gdouble
                 ("translateY", c_double),           # xx gdouble
                 ("scaleX", c_double),               # xx gdouble
                 ("scaleY", c_double),               # xx gdouble
                 ("inverted", c_bool)]               # xx gboolean
 
+# =====================================
+# gerbv_fileinfo_t
 class GerbvFileInfo(Structure):
-    """ gerbv_fileinfo_t """
     _fields_ = [("image", POINTER(GerbvImage)),     # xx gerbv_image_t *
                 ("color", GdkColor),                # xx GdkColor
                 ("alpha", c_uint16),                # xx guint16
@@ -100,8 +109,9 @@ class GerbvFileInfo(Structure):
                     # xx gerbv_user_transformation_t
                 ("layer_dirty", c_bool)]            # xx gboolean
 
+# =====================================
+# gerbv_project_t
 class GerbvProject(Structure):
-    """ gerbv_project_t """
     _fields_ = [("background", POINTER(GdkColor)),  # xx GdkColor
                 ("max_files", c_int),               # xx int
                 ("file", GerbvFileInfo),            # xx gerbv_fileinfo_t **
