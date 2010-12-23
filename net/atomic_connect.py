@@ -20,6 +20,8 @@ class AtomicHandler(object):
     
     def __init__(self):
         self._data = None
+        
+# =====================================
     
     def connect(self):
         conn = httplib.HTTPConnection("1024bit.org")
@@ -28,7 +30,9 @@ class AtomicHandler(object):
             self._data = response.read()
         return response
 
-#=============================================================================      
+# ============================================================================     
 
 if __name__ == "__main__":
     print 'Testing Atomic Handle...'
+    
+# ============================================================================

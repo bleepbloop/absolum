@@ -29,7 +29,6 @@ from net.atomic_connect import AtomicHandler
 # ============================================================================
 
 class Absolum():
-
     def __init__(self):
         self.welcome()
         
