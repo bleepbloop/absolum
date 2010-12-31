@@ -24,25 +24,46 @@ import pcb
 import cnc
 
 # ============================================================================
-
 class Aslan(object):
     def __init__(self):
-        self.bom_list = Catalog()
-        self._docs = DocumentViewer()
-        self.schem = Diagram()
+        self.new_project()        
         
 # =====================================
+# Project
     def new_project(self):
-        new_schematic()
-        new_pcb()
-        
-# ===================================== 
-    def new_schematic(self):
-        pass
+        self.new_doc()
+        self.new_bom()
+        self.new_schematic()
+        self.new_pcb()
+        self.new_cnc()
         
 # =====================================
+# Docs
+    def new_doc(self):
+        self._docs = DocumentViewer()
+        
+# =====================================
+# Bill of Materials
+    def new_bom(self):
+        self._bom_list = Catalog()
+        
+# =====================================
+# Schematics
+    def new_schematic(self):
+        self._schem = Diagram()
+        
+# =====================================
+# PCBs
     def new_pcb(self):
         pass
-        
-# =====================================
 
+# =====================================       
+# CNC
+    def new_cnc(self):
+        pass
+        
+# ============================================================================
+if __name__ == "__main__":
+    aslan = Aslan()
+
+# ============================================================================
